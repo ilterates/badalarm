@@ -1,5 +1,6 @@
 console.log("Connected");
-var date, hour, minute, second;
+var hour, minute, second;
+var set;
 
 function time() {
   now = new Date();
@@ -16,15 +17,28 @@ function time() {
     $("#time").text( hour + ":" + minute + ":" + second );
   var t = setTimeout(time, 500);
 }
-
-
+// function setAlarm() {
+//   if ( set === 0 || undefined ) {
+//     set = 1;
+//   } else {
+//     set = 0;
+//   }
+// }
 function alarm() {
-  var alarmHour = document.getElementById("alarm-hour").value;
-  var alarmMinute = document.getElementById("alarm-minute").value;
+  // if ( set === 1 ) {
+    var alarmHour = $("#alarm-hour").val();
+    var alarmMinute =$("#alarm-minute").val();
+    var hourString = hour.toString();
+    var minuteString = minute.toString();
+    // console.log(hour,hourString + 'Hour');
+    // console.log(minute,minuteString + 'minute');
+    if ( alarmHour === hourString && alarmMinute === minuteString ) {
+      console.log("ALARM!");
+      alert("Alarm");
+    } else {
+      console.log("not");
 
-  if ( alarmHour === alarmHour  && alarmMinute === alarmMinute ) {
-    console.log("ALARM!");
-  } else {
-    console.log("not");
-  }
+    }
+    var check = setTimeout(alarm, 500);
+  // }
 }
