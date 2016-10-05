@@ -1,5 +1,29 @@
-.time {
-  font-size: 6em;
+.title {
+  margin-top: 0px;
   text-align: center;
-  margin-top: 25%;
+  font-size: 7em;
+}
+.time {
+  font-size: 7em;
+  text-align: center;
+  margin-top: 17%;
+}
+.form {
+  display: block;
+  text-align: center;
+}
+/* to be fixed margin-left: 38%; to be gone*/
+.form-div .set-alarm {
+  text-align: center;
+  display: inline-block;
+  margin-left: 38%;
+  margin-top: 200px;
+  /*margin-right: auto;*/
+}
+.set-alarm .input {
+  height: 50px;
+  font-size: 3em;
+  width: 100px;
+  border-style: none;
+  border-bottom-style: solid;
 }

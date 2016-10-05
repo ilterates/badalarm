@@ -6,10 +6,16 @@
     <link rel="stylesheet" href="css/style.css" media="screen" title="no title">
   </head>
   <body onload="time()">
+    <h1 class="title">Bad Alarm</h1>
     <div class="time" id="time">
-      <h1>Music alarm</h1>
     </div>
-
+    <div class="form-div">
+      <form class="set-alarm" action="index.html" method="post">
+        <input class="input" id="alarm-hour" type="number">:
+        <input class="input" id="alarm-minute" type="number">
+        <input type="button" id="set-alarm" onclick="alarm()" name="name" value="Set">
+      </form>
+    </div>
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.0/external/jquery/jquery.js"></script>

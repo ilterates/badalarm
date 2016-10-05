@@ -6,7 +6,6 @@ function time() {
   hour = now.getHours();
   minute = now.getMinutes();
   second = now.getSeconds();
-  console.log(hour);
   if ( hour < 10 ){
     hour = "0" + hour;
   } if ( minute < 10 ) {
@@ -16,4 +15,16 @@ function time() {
   }
     $("#time").text( hour + ":" + minute + ":" + second );
   var t = setTimeout(time, 500);
+}
+
+
+function alarm() {
+  var alarmHour = document.getElementById("alarm-hour").value;
+  var alarmMinute = document.getElementById("alarm-minute").value;
+
+  if ( alarmHour === alarmHour  && alarmMinute === alarmMinute ) {
+    console.log("ALARM!");
+  } else {
+    console.log("not");
+  }
 }
