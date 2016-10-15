@@ -1,6 +1,7 @@
 console.log("Connected");
 var hour, minute, second;
 var set;
+var audio = new Audio('assets/_boat.mp3');
 
 function time() {
   now = new Date();
@@ -22,7 +23,7 @@ function time() {
 //     set = 1;
 //   } else {
 //     set = 0;
-//   }
+//     }
 // }
 function alarm() {
   // if ( set === 1 ) {
@@ -33,12 +34,18 @@ function alarm() {
     // console.log(hour,hourString + 'Hour');
     // console.log(minute,minuteString + 'minute');
     if ( alarmHour === hourString && alarmMinute === minuteString ) {
-      console.log("ALARM!");
-      alert("Alarm");
-    } else {
-      console.log("not");
-
+    audio.play();
     }
     var check = setTimeout(alarm, 500);
+
+    // $("#set-button").on('click',function( e ){
+    //   e.stopImmediatePropagation();
+    //   alarm();
+    //
+    // });
+    $("#stop-button").on('click',function( e ){
+      e.stopImmediatePropagation();
+      audio.pause();
+    });
   // }
 }
