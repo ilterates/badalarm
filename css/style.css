@@ -1,12 +1,17 @@
+body {
+  background-color: #ecf0f1;
+}
 .title {
   margin-top: 0px;
   text-align: center;
   font-size: 7em;
+  color: #2c3e50;
 }
 .time {
   font-size: 7em;
   text-align: center;
   margin-top: 17%;
+  color: #2c3e50;
 }
 .form {
   display: block;
