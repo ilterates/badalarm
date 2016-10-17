@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Tymer</title>
+    <title>Bad Alarm ⏱ </title>
     <link rel="stylesheet" href="css/style.css" media="screen" title="no title">
   </head>
   <body onload="time(), alarm()">
@@ -11,8 +11,8 @@
     </div>
     <div class="form-div">
       <form class="set-alarm" action="index.html" method="post">
-        <input class="input" id="alarm-hour" type="number" maxlength="2">:
-        <input class="input" id="alarm-minute" type="number" maxlength="2">
+        <input class="input" id="alarm-hour" pattern="[0-9]" maxlength="2">:
+        <input class="input" id="alarm-minute" pattern="[0-9]" maxlength="2">
         <button class="set-button" id="set-button" name="name">Set</button>
         <button class="stop-button" id="stop-button">Stop</button>
       </form>
