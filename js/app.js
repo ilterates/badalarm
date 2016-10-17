@@ -1,7 +1,7 @@
 console.log("Connected");
 var hour, minute, second;
 var set;
-var audio = new Audio('assets/_boat.mp3');
+var audio = new Audio('./assets/_boat.mp3');
 
 function time() {
   now = new Date();
