@@ -17,6 +17,9 @@ body {
   display: block;
   text-align: center;
 }
+.set {
+  display: inline-block;
+}
 /* to be fixed margin-left: 38%; to be gone*/
 .form-div .set-alarm {
   text-align: center;

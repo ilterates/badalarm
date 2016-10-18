@@ -11,8 +11,12 @@
     </div>
     <div class="form-div">
       <form class="set-alarm" action="index.html" method="post">
-        <input class="input" id="alarm-hour" pattern="[0-9]" maxlength="2">:
-        <input class="input" id="alarm-minute" pattern="[0-9]" maxlength="2">
+        <div class="set-hour set">
+          <input class="input" id="alarm-hour" pattern="[0-9]" maxlength="2" readonly="true">
+        </div>
+        <div class="set-minute set">
+          <input class="input" id="alarm-minute" pattern="[0-9]" maxlength="2" readonly="true">
+        </div>
         <button class="set-button" id="set-button" name="name">Set</button>
         <button class="stop-button" id="stop-button">Stop</button>
       </form>
