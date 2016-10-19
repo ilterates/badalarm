@@ -1,17 +1,19 @@
 body {
-  background-color: #ecf0f1;
+  background-color: #3C3A4E;
+  font-family: 'Taviraj', serif;
 }
 .title {
   margin-top: 0px;
   text-align: center;
   font-size: 7em;
-  color: #2c3e50;
+  color: white;
+  font-weight: lighter;
 }
 .time {
   font-size: 7em;
   text-align: center;
   margin-top: 17%;
-  color: #2c3e50;
+  color: white;
 }
 .form {
   display: block;
@@ -27,6 +29,10 @@ body {
   margin-left: 38%;
   margin-top: 200px;
   /*margin-right: auto;*/
+}
+.input {
+  background-color: #3C3A4E;
+  color: white;
 }
 .set-alarm .input {
   height: 50px;
@@ -48,6 +54,7 @@ body {
   -o-transform: rotate(-90deg);
   /* Internet Explorer */
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+  color: white;
 }
 /*.hour-up-arrow:hover {
   max-width: 30%;
@@ -66,6 +73,7 @@ body {
   -o-transform: rotate(-270deg);
   /* Internet Explorer */
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=9);
+  color: white;
 }
 /*.hour-down-arrow:hover {
   max-width: 30%;
