@@ -11,13 +11,13 @@ body {
 }
 .time {
   font-size: 7em;
+  font-weight: lighter;
   text-align: center;
-  margin-top: 17%;
+  margin-top: 7%;
   color: white;
 }
 .form {
   display: block;
-  text-align: center;
 }
 .set {
   display: inline-block;
@@ -40,6 +40,7 @@ body {
   width: 100px;
   border-style: none;
   border-bottom-style: solid;
+  text-align: center;
 }
 .up-arrow {
   max-width: 25%;
