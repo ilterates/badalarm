@@ -78,6 +78,7 @@ function alarm() {
       set = 1;
       alarm();
       $("#set-button").html("CANCEL");
+      audio.currentTime = 0;
     } else {
       set = 0;
       stopSound();
