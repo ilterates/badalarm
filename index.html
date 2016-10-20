@@ -6,25 +6,25 @@
     <link rel="stylesheet" href="css/style.css" media="screen" title="no title">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
   </head>
-  <body onload="time(), alarm()">
+  <body onload="time()">
     <h1 class="title">Bad Alarm</h1>
     <div class="time" id="time">
     </div>
     <div class="form-div">
-      <form class="set-alarm" action="index.html" method="post">
+      <form class="set-alarm">
         <div class="set-hour set">
-          <input class="input" id="alarm-hour" pattern="[0-9]" maxlength="2" value="1" readonly="true">
+          <input class="input" id="alarm-hour" pattern="[0-9]" maxlength="2" value="3" readonly="true">
           <img src="./assets/arrow.svg" class="up-arrow" id="hour-up-arrow" />
           <img src="./assets/arrow.svg" class="down-arrow" id="hour-down-arrow" />
         </div>
         <div class="set-minute set">
-          <input class="input" id="alarm-minute" pattern="[0-9]" maxlength="2" value="1" readonly="true">
+          <input class="input" id="alarm-minute" pattern="[0-9]" maxlength="2" value="39" readonly="true">
           <img src="./assets/arrow.svg" class="up-arrow" id="minute-up-arrow"/>
           <img src="./assets/arrow.svg" class="down-arrow" id="minute-down-arrow"/>
         </div>
-        <button class="set-button" id="set-button" name="name">Set / Cancel</button>
         <!-- <button class="stop-button" id="stop-button">Stop</button> -->
       </form>
+      <button class="set-button" id="set-button" name="name">SET</button>
     </div>
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>

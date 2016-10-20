@@ -76,7 +76,15 @@ body {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=9);
   color: white;
 }
-/*.hour-down-arrow:hover {
-  max-width: 30%;
-  max-height: 30%;
-}*/
+.set-button {
+  width: 200px;
+  height: 50px;
+  background-color: white;
+  border: none;
+  font-size: 2em;
+  margin-left: 10%;
+  text-decoration: none;
+  color: #3C3A4E;
+  border-radius: 5px;
+  top: -10px;
+}

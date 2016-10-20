@@ -1,6 +1,6 @@
 console.log("Connected");
 var hour, minute, second;
-var set;
+var set = 0;
 var audio = new Audio('https://raw.githubusercontent.com/ilterates/badalarm/master/assets/_boat.mp3');
 
 function time() {
@@ -67,19 +67,27 @@ function alarm() {
     var minuteString = minute.toString();
     // console.log(hour,hourString + 'Hour');
     // console.log(minute,minuteString + 'minute');
-    if ( alarmHour === hourString && alarmMinute === minuteString ) {
-    audio.play();
+    if ( alarmHour === hourString && alarmMinute === minuteString && set === 1 ) {
+      playSound();
     }
     var check = setTimeout(alarm, 500);
-
-    // $("#set-button").on('click',function( e ){
-    //   e.stopImmediatePropagation();
-    //   alarm();
-    //
-    // });
-    $("#stop-button").on('click',function( e ){
-      e.stopImmediatePropagation();
-      audio.pause();
-    });
-  // }
 }
+  $("#set-button").on('click',function(){
+    // e.stopImmediatePropagation();
+    if ( set === 0 ) {
+      set = 1;
+      alarm();
+      $("#set-button").html("CANCEL");
+    } else {
+      set = 0;
+      stopSound();
+      $("#set-button").html("SET");
+    }
+  });
+  function playSound() {
+    // audio.currentTime = 0;
+    audio.play();
+  }
+  function stopSound() {
+    audio.pause();
+  }
