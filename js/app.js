@@ -88,6 +88,7 @@ function alarm() {
   function playSound() {
     // audio.currentTime = 0;
     audio.play();
+    $("#time").effect("shake", 750);
   }
   function stopSound() {
     audio.pause();
