@@ -34,6 +34,17 @@ $("#hour-up-arrow").click(function(){
     $("#alarm-hour").val(hourVal);
   }
 });
+// hour with mousewheel //
+$("#hour-up-arrow").bind('mousewheel', function(e){
+  if (e.originalEvent.wheelDelta / 120 > 0) {
+    hourVal ++;
+    $("#alarm-hour").val(hourVal);
+    if (hourVal >= 24) {
+      hourVal = 0;
+      $("#alarm-hour").val(hourVal);
+    }
+  }
+});
 $("#hour-down-arrow").click(function(){
   hourVal --;
   $("#alarm-hour").val(hourVal);
