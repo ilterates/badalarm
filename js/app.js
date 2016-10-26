@@ -1,4 +1,4 @@
-console.log("Connected");
+console.log("Connected!");
 var hour, minute, second;
 var set = 0;
 var hourVal = 0;
