@@ -7,7 +7,7 @@ $("#alarm-hour").val(hourVal);
 $("#alarm-minute").val(minuteVal);
 
 var blaring = new Audio();
-var audioArr = new Array('https://raw.githubusercontent.com/ilterates/badalarm/master/assets/_boat.mp3');
+var audioArr = new Array('https://raw.githubusercontent.com/ilterates/badalarm/master/assets/_boat.mp3','https://raw.githubusercontent.com/ilterates/badalarm/master/assets/_morty.mp3');
 var random = _.sample(audioArr);
 blaring.src = random;
 function time() {
