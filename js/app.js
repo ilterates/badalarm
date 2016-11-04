@@ -6,8 +6,10 @@ var minuteVal = 0;
 $("#alarm-hour").val(hourVal);
 $("#alarm-minute").val(minuteVal);
 
-var audio = new Audio('https://raw.githubusercontent.com/ilterates/badalarm/master/assets/_boat.mp3');
-
+var blaring = new Audio();
+var audioArr = new Array('https://raw.githubusercontent.com/ilterates/badalarm/master/assets/_boat.mp3');
+var random = _.sample(audioArr);
+blaring.src = random;
 function time() {
   now = new Date();
   hour = now.getHours();
@@ -37,6 +39,16 @@ $("#hour-up-arrow").click(function(){
 // hour with mousewheel //
 $("#hour-up-arrow").bind('mousewheel', function(e){
   if (e.originalEvent.wheelDelta / 120 > 0) {
+    hourVal ++;
+    $("#alarm-hour").val(hourVal);
+    if (hourVal >= 24) {
+      hourVal = 0;
+      $("#alarm-hour").val(hourVal);
+    }
+  }
+});
+$("#hour-up-arrow").bind('mousewheel', function(e){
+  if (e.originalEvent.wheelDelta / 120 < 0) {
     hourVal ++;
     $("#alarm-hour").val(hourVal);
     if (hourVal >= 24) {
@@ -82,18 +94,38 @@ $("#minute-down-arrow").click(function(){
     $("#alarm-minute").val(minuteVal);
   }
 });
-function alarm() {
-  // if ( set === 1 ) {
-    var alarmHour = $("#alarm-hour").val();
-    var alarmMinute =$("#alarm-minute").val();
-    var hourString = hour.toString();
-    var minuteString = minute.toString();
-    // console.log(hour,hourString + 'Hour');
-    // console.log(minute,minuteString + 'minute');
-    if ( alarmHour === hourString && alarmMinute === minuteString && set === 1 ) {
-      playSound();
+// minute with mousewheel
+$("#minute-up-arrow").bind('mousewheel', function(e){
+  if (e.originalEvent.wheelDelta / 120 < 0) {
+    hourVal ++;
+    $("#alarm-hour").val(hourVal);
+    if (hourVal >= 24) {
+      hourVal = 0;
+      $("#alarm-hour").val(hourVal);
     }
-    var check = setTimeout(alarm, 500);
+  }
+});
+$("#minute-down-arrow").bind('mousewheel', function(e){
+  if (e.originalEvent.wheelDelta / 0 > -120) {
+    hourVal --;
+    $("#alarm-hour").val(hourVal);
+    if (hourVal >= 24) {
+      hourVal = 0;
+      $("#alarm-hour").val(hourVal);
+    }
+  }
+});
+function alarm() {
+  var alarmHour = $("#alarm-hour").val();
+  var alarmMinute =$("#alarm-minute").val();
+  var hourString = hour.toString();
+  var minuteString = minute.toString();
+  // console.log(hour,hourString + 'Hour');
+  // console.log(minute,minuteString + 'minute');
+  if ( alarmHour === hourString && alarmMinute === minuteString && set === 1 ) {
+    playSound();
+  }
+  var check = setTimeout(alarm, 500);
 }
   $("#set-button").on('click',function(){
     // e.stopImmediatePropagation();
@@ -101,7 +133,7 @@ function alarm() {
       set = 1;
       alarm();
       $("#set-button").html("CANCEL");
-      audio.currentTime = 0;
+      blaring.currentTime = 0;
     } else {
       set = 0;
       stopSound();
@@ -110,9 +142,9 @@ function alarm() {
   });
   function playSound() {
     // audio.currentTime = 0;
-    audio.play();
+    blaring.play();
     $("#time").effect("shake", 750);
   }
   function stopSound() {
-    audio.pause();
+    blaring.pause();
   }
