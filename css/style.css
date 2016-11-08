@@ -1,12 +1,12 @@
 body {
-  background-color: #3C3A4E;
+  background-color: #181B1F;
   font-family: 'Taviraj', serif;
 }
 .title {
   margin-top: 0px;
   text-align: center;
   font-size: 7em;
-  color: white;
+  color: #00dfc3;
   font-weight: lighter;
 }
 .time {
@@ -14,7 +14,7 @@ body {
   font-weight: lighter;
   text-align: center;
   margin-top: 7%;
-  color: white;
+  color: #00dfc3;
 }
 .form {
   display: block;
@@ -31,8 +31,8 @@ body {
   /*margin-right: auto;*/
 }
 .input {
-  background-color: #3C3A4E;
-  color: white;
+  background-color: #181B1F;
+  color: #00dfc3;
 }
 .set-alarm .input {
   height: 50px;
@@ -55,7 +55,7 @@ body {
   -o-transform: rotate(-90deg);
   /* Internet Explorer */
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
-  color: white;
+  color: #00dfc3;
 }
 /*.hour-up-arrow:hover {
   max-width: 30%;
@@ -74,12 +74,12 @@ body {
   -o-transform: rotate(-270deg);
   /* Internet Explorer */
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=9);
-  color: white;
+  color: #00dfc3;
 }
 .set-button {
   width: 200px;
   height: 50px;
-  background-color: white;
+  background-color: #00dfc3;
   border: none;
   font-size: 2em;
   margin-left: 10%;
