@@ -38,16 +38,6 @@ $("#hour-up-arrow").click(function(){
 });
 // hour with mousewheel //
 $("#hour-up-arrow").bind('mousewheel', function(e){
-  if (e.originalEvent.wheelDelta / 120 > 0) {
-    hourVal ++;
-    $("#alarm-hour").val(hourVal);
-    if (hourVal >= 24) {
-      hourVal = 0;
-      $("#alarm-hour").val(hourVal);
-    }
-  }
-});
-$("#hour-up-arrow").bind('mousewheel', function(e){
   if (e.originalEvent.wheelDelta / 120 < 0) {
     hourVal ++;
     $("#alarm-hour").val(hourVal);
@@ -63,6 +53,16 @@ $("#hour-down-arrow").click(function(){
   if (hourVal <= 0) {
     hourVal = 23;
     $("#alarm-hour").val(hourVal);
+  }
+});
+$("#hour-down-arrow").bind('mousewheel', function(e){
+  if (e.originalEvent.wheelDelta / 0 > 120) {
+    hourVal --;
+    $("#alarm-hour").val(hourVal);
+    if (hourVal <= 0) {
+      hourVal = 23;
+      $("#alarm-hour").val(hourVal);
+    }
   }
 });
     // minute //
@@ -86,6 +86,7 @@ $("#minute-up-arrow").click(function(){
   // }
   // console.log(minuteVal);
 });
+
 $("#minute-down-arrow").click(function(){
   minuteVal --;
   $("#alarm-minute").val(minuteVal);
@@ -97,21 +98,21 @@ $("#minute-down-arrow").click(function(){
 // minute with mousewheel
 $("#minute-up-arrow").bind('mousewheel', function(e){
   if (e.originalEvent.wheelDelta / 120 < 0) {
-    hourVal ++;
-    $("#alarm-hour").val(hourVal);
-    if (hourVal >= 24) {
-      hourVal = 0;
-      $("#alarm-hour").val(hourVal);
+    minuteVal ++;
+    $("#alarm-minute").val(minuteVal);
+    if (minuteVal >= 60) {
+      minuteVal = 0;
+      $("#alarm-minute").val(minuteVal);
     }
   }
 });
 $("#minute-down-arrow").bind('mousewheel', function(e){
-  if (e.originalEvent.wheelDelta / 0 > -120) {
-    hourVal --;
-    $("#alarm-hour").val(hourVal);
-    if (hourVal >= 24) {
-      hourVal = 0;
-      $("#alarm-hour").val(hourVal);
+  if (e.originalEvent.wheelDelta / 0 > 120) {
+    minuteVal --;
+    $("#alarm-minute").val(minuteVal);
+    if (minuteVal < 0) {
+      minuteVal = 59;
+      $("#alarm-minute").val(minuteVal);
     }
   }
 });
