@@ -56,7 +56,7 @@ $("#hour-down-arrow").click(function(){
   }
 });
 $("#hour-down-arrow, , #hour-up-arrow").bind('mousewheel', function(e){
-  if (e.originalEvent.wheelDelta / 0 < 120) {
+  if (e.originalEvent.wheelDelta / 120 < 0) {
     hourVal --;
     $("#alarm-hour").val(hourVal);
     if (hourVal <= 0) {
@@ -97,7 +97,7 @@ $("#minute-down-arrow").click(function(){
 });
 // minute with mousewheel
 $("#minute-up-arrow, #minute-down-arrow").bind('mousewheel', function(e){
-  if (e.originalEvent.wheelDelta / 0 > 120) {
+  if (e.originalEvent.wheelDelta / 120 > 0) {
     minuteVal ++;
     $("#alarm-minute").val(minuteVal);
     if (minuteVal >= 60) {
