@@ -55,7 +55,7 @@ $("#hour-down-arrow").click(function(){
     $("#alarm-hour").val(hourVal);
   }
 });
-$("#hour-down-arrow , #hour-up-arrow").bind('mousewheel', function(e){
+$("#hour-down-arrow, #hour-up-arrow").bind('mousewheel', function(e){
   if (e.originalEvent.wheelDelta / 120 < 0) {
     hourVal --;
     $("#alarm-hour").val(hourVal);
