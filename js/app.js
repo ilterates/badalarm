@@ -114,21 +114,18 @@ var minute = moment().format("mm");
  alarmHour = $("#alarm-hour").val();
  alarmMinute =$("#alarm-minute").val();
  intHour = parseInt(hour);
- // console.log( intHour , "intHour");
  alarmIntHour = parseInt(alarmHour);
- // console.log( alarmIntHour, "alarmIntHour" );
  intMinute = parseInt(minute);
- // console.log( intMinute, "intMinute" );
  alarmIntMinute = parseInt(alarmMinute);
- // console.log( alarmIntMinute, "alarmIntMinute" );
   if ( alarmIntHour === intHour && alarmIntMinute === intMinute && set === true ) {
     playSound();
-    console.log("alarm");
+    // set = false;
+    $("#set-button").html("CANCEL");
+    // console.log("alarm");
   }
   var check = setTimeout(badAlarm, 500);
 }
   $("#set-button").on('click',function(){
-    // e.stopImmediatePropagation();
     if ( set === false ) {
       set = true;
       badAlarm();
@@ -140,9 +137,13 @@ var minute = moment().format("mm");
     }
   });
   function playSound() {
-    blaring.currentTime = 0;
-    blaring.play();
-    $("#time").effect("shake", 750);
+    // blaring.currentTime = 0;
+    // blaring.src = random;
+    if ( set === true ) {
+      blaring.play();
+      $("#time").effect("shake", 750);
+      var restart = setTimeout(playSound, 2000);
+    }
   }
   function stopSound() {
     blaring.pause();
