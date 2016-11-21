@@ -19,7 +19,7 @@ function badTime() {
 $("#hour-up-arrow").click(function(){
   if ( set === false ) {
     hourVal ++;
-    // doubleDigit();
+    doubleDigit();
     $("#alarm-hour").val(hourVal);
     if (hourVal >= 24) {
       hourVal = 0;
@@ -31,7 +31,7 @@ $("#hour-up-arrow").click(function(){
 $("#hour-up-arrow, #hour-down-arrow, #alarm-hour").bind('mousewheel', function(e){
   if (e.originalEvent.wheelDelta / 120 > 0 && set === false) {
     hourVal ++;
-    // doubleDigit();
+    doubleDigit();
     $("#alarm-hour").val(hourVal);
     if (hourVal >= 24) {
       hourVal = 0;
@@ -42,7 +42,7 @@ $("#hour-up-arrow, #hour-down-arrow, #alarm-hour").bind('mousewheel', function(e
 $("#hour-down-arrow").click(function(){
   if ( set === false ) {
     hourVal --;
-    // doubleDigit();
+    doubleDigit();
     $("#alarm-hour").val(hourVal);
     if (hourVal <= 0) {
       hourVal = 23;
@@ -53,7 +53,7 @@ $("#hour-down-arrow").click(function(){
 $("#hour-down-arrow, #hour-up-arrow, #alarm-hour").bind('mousewheel', function(e){
   if (e.originalEvent.wheelDelta / 120 < 0 && set === false) {
     hourVal --;
-    // doubleDigit();
+    doubleDigit();
     $("#alarm-hour").val(hourVal);
     if (hourVal <= 0) {
       hourVal = 23;
@@ -65,7 +65,7 @@ $("#hour-down-arrow, #hour-up-arrow, #alarm-hour").bind('mousewheel', function(e
 $("#minute-up-arrow").click(function(){
   if ( set === false ) {
     minuteVal ++;
-    // doubleDigit();
+    doubleDigit();
     $("#alarm-minute").val(minuteVal);
     if (minuteVal >= 60) {
       minuteVal = 0;
@@ -77,7 +77,7 @@ $("#minute-up-arrow").click(function(){
 $("#minute-down-arrow").click(function(){
   if ( set === false ) {
     minuteVal --;
-    // doubleDigit();
+    doubleDigit();
     $("#alarm-minute").val(minuteVal);
     if (minuteVal < 0) {
       minuteVal = 59;
@@ -89,7 +89,7 @@ $("#minute-down-arrow").click(function(){
 $("#minute-up-arrow, #minute-down-arrow, #alarm-minute").bind('mousewheel', function(e){
   if (e.originalEvent.wheelDelta / 120 > 0 && set === false) {
     minuteVal ++;
-    // doubleDigit();
+    doubleDigit();
     $("#alarm-minute").val(minuteVal);
     if (minuteVal >= 60) {
       minuteVal = 0;
@@ -100,7 +100,7 @@ $("#minute-up-arrow, #minute-down-arrow, #alarm-minute").bind('mousewheel', func
 $("#minute-down-arrow, #minute-up-arrow, #alarm-minute" ).bind('mousewheel', function(e){
   if (e.originalEvent.wheelDelta / 0 < 120 && set === false) {
     minuteVal --;
-    // doubleDigit();
+    doubleDigit();
     $("#alarm-minute").val(minuteVal);
     if (minuteVal < 0) {
       minuteVal = 59;
@@ -112,7 +112,7 @@ function badAlarm() {
 var hour = moment().format('hh');
 var minute = moment().format("mm");
  alarmHour = $("#alarm-hour").val();
- alarmMinute =$("#alarm-minute").val();
+ alarmMinute = $("#alarm-minute").val();
  intHour = parseInt(hour);
  alarmIntHour = parseInt(alarmHour);
  intMinute = parseInt(minute);
@@ -137,8 +137,6 @@ var minute = moment().format("mm");
     }
   });
   function playSound() {
-    // blaring.currentTime = 0;
-    // blaring.src = random;
     if ( set === true ) {
       blaring.play();
       $("#time").effect("shake", 750);
@@ -148,12 +146,17 @@ var minute = moment().format("mm");
   function stopSound() {
     blaring.pause();
   }
-  // function doubleDigit() {
-  //   if ( $("#alarm-hour").val().length < 2 ) {
-  //     alarmHour = "0" + alarmHour;
-  //     $("#alarm-hour").val(alarmHour);
-  //   } if ( $("#alarm-minute").val().length < 2 ) {
-  //     alarmMinute = "0" + alarmMinute;
-  //     $("#alarm-minute").val(alarmMinute);
-  //   }
-  // }
+  function doubleDigit() {
+    // alarmHour = $("#alarm-hour").val();
+    // alarmMinute = $("#alarm-minute").val();
+    // if ( alarmHour < 10 ) {
+    //   alarmHour = "0" + alarmHour;
+    //   $("#alarm-hour").val(alarmHour);
+    //   console.log("added 0", alarmHour);
+    // } else { console.log("test"); }
+    // if ( alarmMinute < 10 ) {
+    //   alarmMinute = "0" + alarmMinute;
+    //   $("#alarm-minute").val(alarmMinute);
+    //   console.log("added 0", alarmMinute);
+    // } else { console.log("test"); }
+  }
