@@ -1,11 +1,9 @@
 console.log("Connected!");
 console.log(moment.unix());
-var hour, minute, second;
+var hour, minute, second, alarmHour, alarmMinute, intHour, alarmIntHour, alarmIntMinute;
 var set = false;
 var hourVal = 0;
 var minuteVal = 0;
-var hour = moment().format('hh');
-var minute = moment().format("mm");
 var blaring = new Audio();
 var audioArr = new Array('https://raw.githubusercontent.com/ilterates/badalarm/master/assets/_boat.mp3',
                          'https://raw.githubusercontent.com/ilterates/badalarm/master/assets/_morty.mp3');
@@ -111,21 +109,23 @@ $("#minute-down-arrow, #minute-up-arrow, #alarm-minute" ).bind('mousewheel', fun
   }
 });
 function badAlarm() {
-  var alarmHour = $("#alarm-hour").val();
-  var alarmMinute =$("#alarm-minute").val();
-  var intHour = parseInt(hour);
-  console.log( intHour , "intHour");
-  var alarmIntHour = parseInt(alarmHour);
-  console.log( alarmIntHour, "alarmIntHour" );
-  var intMinute = parseInt(minute);
-  console.log( intMinute, "intMinute" );
-  var alarmIntMinute = parseInt(alarmMinute);
-  console.log( alarmIntMinute, "alarmIntMinute" );
+var hour = moment().format('hh');
+var minute = moment().format("mm");
+ alarmHour = $("#alarm-hour").val();
+ alarmMinute =$("#alarm-minute").val();
+ intHour = parseInt(hour);
+ // console.log( intHour , "intHour");
+ alarmIntHour = parseInt(alarmHour);
+ // console.log( alarmIntHour, "alarmIntHour" );
+ intMinute = parseInt(minute);
+ // console.log( intMinute, "intMinute" );
+ alarmIntMinute = parseInt(alarmMinute);
+ // console.log( alarmIntMinute, "alarmIntMinute" );
   if ( alarmIntHour === intHour && alarmIntMinute === intMinute && set === true ) {
     playSound();
     console.log("alarm");
   }
-  // var check = setTimeout(badAlarm, 500);
+  var check = setTimeout(badAlarm, 500);
 }
   $("#set-button").on('click',function(){
     // e.stopImmediatePropagation();
