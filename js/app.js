@@ -2,6 +2,7 @@ console.log("Connected!");
 console.log(moment.unix());
 var hour, minute, second, alarmHour, alarmMinute, intHour, alarmIntHour, alarmIntMinute;
 var set = false;
+var am = true;
 var hourVal = 0;
 var minuteVal = 0;
 var blaring = new Audio();
@@ -21,7 +22,7 @@ $("#hour-up-arrow").click(function(){
     hourVal ++;
     doubleDigit();
     $("#alarm-hour").val(hourVal);
-    if (hourVal >= 24) {
+    if (hourVal > 12) {
       hourVal = 0;
       $("#alarm-hour").val(hourVal);
     }
@@ -33,7 +34,7 @@ $("#hour-up-arrow, #hour-down-arrow, #alarm-hour").bind('mousewheel', function(e
     hourVal ++;
     doubleDigit();
     $("#alarm-hour").val(hourVal);
-    if (hourVal >= 24) {
+    if (hourVal > 12) {
       hourVal = 0;
       $("#alarm-hour").val(hourVal);
     }
@@ -44,8 +45,8 @@ $("#hour-down-arrow").click(function(){
     hourVal --;
     doubleDigit();
     $("#alarm-hour").val(hourVal);
-    if (hourVal <= 0) {
-      hourVal = 23;
+    if (hourVal < 0) {
+      hourVal = 12;
       $("#alarm-hour").val(hourVal);
     }
   }
@@ -55,8 +56,8 @@ $("#hour-down-arrow, #hour-up-arrow, #alarm-hour").bind('mousewheel', function(e
     hourVal --;
     doubleDigit();
     $("#alarm-hour").val(hourVal);
-    if (hourVal <= 0) {
-      hourVal = 23;
+    if (hourVal < 0) {
+      hourVal = 12;
       $("#alarm-hour").val(hourVal);
     }
   }
@@ -67,7 +68,7 @@ $("#minute-up-arrow").click(function(){
     minuteVal ++;
     doubleDigit();
     $("#alarm-minute").val(minuteVal);
-    if (minuteVal >= 60) {
+    if (minuteVal > 59) {
       minuteVal = 0;
       $("#alarm-minute").val(minuteVal);
     }
@@ -91,7 +92,7 @@ $("#minute-up-arrow, #minute-down-arrow, #alarm-minute").bind('mousewheel', func
     minuteVal ++;
     doubleDigit();
     $("#alarm-minute").val(minuteVal);
-    if (minuteVal >= 60) {
+    if (minuteVal > 59) {
       minuteVal = 0;
       $("#alarm-minute").val(minuteVal);
     }
