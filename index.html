@@ -13,17 +13,19 @@
     <div class="form-div">
       <form class="set-alarm">
         <div class="set-hour set">
-          <input class="input" id="alarm-hour" pattern="[0-9]" value="0" maxlength="2" readonly="true">
+          <input class="alarm-setter" id="alarm-hour" pattern="[0-9]" value="0" maxlength="2" readonly="true">
           <img src="./assets/arrow.svg" class="up-arrow" id="hour-up-arrow" />
           <img src="./assets/arrow.svg" class="down-arrow" id="hour-down-arrow" />
         </div>
         <div class="set-minute set">
-          <input class="input" id="alarm-minute" pattern="[0-9]"  value="0" maxlength="2" readonly="true">
+          <input class="alarm-setter" id="alarm-minute" pattern="[0-9]"  value="0" maxlength="2" readonly="true">
           <img src="./assets/arrow.svg" class="up-arrow" id="minute-up-arrow"/>
           <img src="./assets/arrow.svg" class="down-arrow" id="minute-down-arrow"/>
         </div>
         <!-- <button class="stop-button" id="stop-button">Stop</button> -->
       </form>
+      <input class="am-pm" id="am" value="AM" readonly="true">
+      <input class="am-pm" id="pm" value="PM" readonly="true">
       <button class="set-button" id="set-button" name="name">SET</button>
     </div>
     <!-- jQuery -->

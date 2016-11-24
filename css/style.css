@@ -30,17 +30,15 @@ body {
   margin-top: 200px;
   /*margin-right: auto;*/
 }
-.input {
-  background-color: #181B1F;
-  color: #00dfc3;
-}
-.set-alarm .input {
+.set-alarm .alarm-setter {
   height: 50px;
   font-size: 3em;
   width: 100px;
   border-style: none;
   border-bottom-style: solid;
   text-align: center;
+  background-color: #181B1F;
+  color: #00dfc3;
 }
 .up-arrow {
   max-width: 25%;
@@ -75,6 +73,14 @@ body {
   /* Internet Explorer */
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=9);
   color: #00dfc3;
+}
+.am-pm {
+  height: 50px;
+  font-size: 3em;
+  width: 100px;
+  border-style: none;
+  border-bottom-style: solid;
+  text-align: center;
 }
 .set-button {
   width: 200px;

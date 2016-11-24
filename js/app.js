@@ -161,3 +161,17 @@ var minute = moment().format("mm");
     //   console.log("added 0", alarmMinute);
     // } else { console.log("test"); }
   }
+  $("#am").click(function (){
+    amSwitch();
+  });
+  $("#pm").click(function (){
+    pmSwitch();
+  });
+  function amSwitch() {
+    am = true;
+    console.log(am);
+  }
+  function pmSwitch() {
+    am = false;
+    console.log(am);
+  }
