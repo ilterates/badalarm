@@ -1,6 +1,7 @@
 console.log("Connected!");
 console.log(moment.unix());
 var hour, minute, second, alarmHour, alarmMinute, intHour, alarmIntHour, alarmIntMinute;
+var alarmTimePeriod = "am";
 var set = false;
 var am = true;
 var hourVal = 0;
@@ -109,23 +110,6 @@ $("#minute-down-arrow, #minute-up-arrow, #alarm-minute" ).bind('mousewheel', fun
     }
   }
 });
-function badAlarm() {
-var hour = moment().format('hh');
-var minute = moment().format("mm");
- alarmHour = $("#alarm-hour").val();
- alarmMinute = $("#alarm-minute").val();
- intHour = parseInt(hour);
- alarmIntHour = parseInt(alarmHour);
- intMinute = parseInt(minute);
- alarmIntMinute = parseInt(alarmMinute);
-  if ( alarmIntHour === intHour && alarmIntMinute === intMinute && set === true ) {
-    playSound();
-    // set = false;
-    $("#set-button").html("CANCEL");
-    // console.log("alarm");
-  }
-  var check = setTimeout(badAlarm, 500);
-}
   $("#set-button").on('click',function(){
     if ( set === false ) {
       set = true;
@@ -162,16 +146,42 @@ var minute = moment().format("mm");
     // } else { console.log("test"); }
   }
   $("#am").click(function (){
-    amSwitch();
+    timePeriod = "am";
   });
   $("#pm").click(function (){
-    pmSwitch();
+    alarmTimePeriod = "pm";
   });
-  function amSwitch() {
+  function timePeriodChecker() {
     am = true;
     console.log(am);
+    if ( timePeriod === "am" ) {
+      am = true;
+    } else {
+      am = false;
+    }
   }
   function pmSwitch() {
     am = false;
     console.log(am);
+  }
+  function badAlarm() {
+  var hour = moment().format('hh');
+  var minute = moment().format("mm");
+  var timePeriod = moment().format('a');
+    alarmHour = $("#alarm-hour").val();
+    alarmMinute = $("#alarm-minute").val();
+    intHour = parseInt(hour);
+    alarmIntHour = parseInt(alarmHour);
+    intMinute = parseInt(minute);
+    alarmIntMinute = parseInt(alarmMinute);
+    if ( alarmIntHour === intHour &&
+         alarmIntMinute === intMinute &&
+         set === true &&
+         timePeriod === alarmTimePeriod
+        ) {
+      playSound();
+      $("#set-button").html("CANCEL");
+      console.log("alarm");
+    }
+    var check = setTimeout(badAlarm, 500);
   }
