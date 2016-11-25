@@ -146,10 +146,12 @@ $("#minute-down-arrow, #minute-up-arrow, #alarm-minute" ).bind('mousewheel', fun
     // } else { console.log("test"); }
   }
   $("#am").click(function (){
-    timePeriod = "am";
+    alarmTimePeriod = "am";
+    console.log(alarmTimePeriod);
   });
   $("#pm").click(function (){
     alarmTimePeriod = "pm";
+    console.log(alarmTimePeriod);
   });
   function timePeriodChecker() {
     am = true;
