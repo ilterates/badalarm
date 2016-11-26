@@ -77,11 +77,11 @@ body {
   color: #00dfc3;
 }
 .am-pm-section {
-  margin-left: 20%;
+  margin-left: 30%;
   top: 90%;
-  position: absolute;
   bottom: 25%;
   left: 33%;
+  position: absolute;
 }
 .am-pm {
   font-size: 3em;
