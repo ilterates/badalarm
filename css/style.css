@@ -103,10 +103,12 @@ body {
   background-color: #00dfc3;
   border: none;
   font-size: 2em;
-  margin-left: 30%;
+  margin-right: 5%;
+  margin-top: 15%;
   text-decoration: none;
   color: #3C3A4E;
   border-radius: 5px;
   /*top: -10px;*/
   float: right;
+
 }
