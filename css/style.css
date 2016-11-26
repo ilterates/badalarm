@@ -16,9 +16,10 @@ body {
   margin-top: 7%;
   color: #00dfc3;
 }
-.form {
+/*.form-div {
   display: block;
-}
+  top: -10%;
+}*/
 .set {
   display: inline-block;
 }
@@ -27,7 +28,8 @@ body {
   text-align: center;
   display: inline-block;
   margin-left: 38%;
-  margin-top: 200px;
+  margin-top: 180px;
+
   /*margin-right: auto;*/
 }
 .set-alarm .alarm-setter {
@@ -74,13 +76,26 @@ body {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=9);
   color: #00dfc3;
 }
+.am-pm-section {
+  margin-left: 20%;
+  top: 90%;
+  position: absolute;
+  bottom: 25%;
+  left: 33%;
+}
 .am-pm {
-  height: 50px;
   font-size: 3em;
+  height: 50px;
   width: 100px;
   border-style: none;
   border-bottom-style: solid;
+  border-top-style: solid;
   text-align: center;
+  background-color: #181B1F;
+  color: #00dfc3;
+}
+.am-pm-disabled {
+  opacity: 0.1;
 }
 .set-button {
   width: 200px;
@@ -88,9 +103,10 @@ body {
   background-color: #00dfc3;
   border: none;
   font-size: 2em;
-  margin-left: 10%;
+  margin-left: 30%;
   text-decoration: none;
   color: #3C3A4E;
   border-radius: 5px;
-  top: -10px;
+  /*top: -10px;*/
+  float: right;
 }
