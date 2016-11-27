@@ -23,7 +23,7 @@ $("#hour-up-arrow").click(function(){
     hourVal ++;
     doubleDigit();
     $("#alarm-hour").val(hourVal);
-    if (hourVal > 12) {
+    if (hourVal > 11) {
       hourVal = 0;
       $("#alarm-hour").val(hourVal);
     }
@@ -35,7 +35,7 @@ $("#hour-up-arrow, #hour-down-arrow, #alarm-hour").bind('mousewheel', function(e
     hourVal ++;
     doubleDigit();
     $("#alarm-hour").val(hourVal);
-    if (hourVal > 12) {
+    if (hourVal > 11) {
       hourVal = 0;
       $("#alarm-hour").val(hourVal);
     }
@@ -47,7 +47,7 @@ $("#hour-down-arrow").click(function(){
     doubleDigit();
     $("#alarm-hour").val(hourVal);
     if (hourVal < 0) {
-      hourVal = 12;
+      hourVal = 11;
       $("#alarm-hour").val(hourVal);
     }
   }
@@ -58,7 +58,7 @@ $("#hour-down-arrow, #hour-up-arrow, #alarm-hour").bind('mousewheel', function(e
     doubleDigit();
     $("#alarm-hour").val(hourVal);
     if (hourVal < 0) {
-      hourVal = 12;
+      hourVal = 11;
       $("#alarm-hour").val(hourVal);
     }
   }
