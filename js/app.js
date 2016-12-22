@@ -12,9 +12,15 @@ var audioArr = new Array('https://raw.githubusercontent.com/ilterates/badalarm/m
 var random = _.sample(audioArr);
 blaring.src = random;
 function badTime() {
-  var time = moment().format('hh:mm:ss a'); // November 15th 2016, 8:54:55 pm
-  $("#time").text( time );
-  var t = setTimeout(badTime, 500);
+  var timeChecker = moment().format('hh:mm:ss a'); // November 15th 2016, 8:54:55 pm
+  console.log(timeChecker);
+  $("#time").text( timeChecker );
+   var t = setTimeout(badTime, 500);
+  // var now = Date.now();
+  // var delay =  500;
+  // while ( Date.now() - delay > now ) {
+  //   badTime();
+  //}
 }
       // setting the alarm //
       // hour //
