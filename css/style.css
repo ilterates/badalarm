@@ -10,10 +10,11 @@ body {
   font-weight: lighter;
 }
 .time-class {
+  display: flex;
+  justify-content: center;
   font-size: 7em;
   font-weight: lighter;
-  text-align: center;
-  margin-top: 7%;
+  /*text-align: center;*/
   color: #00dfc3;
 }
 /*.form-div {
