@@ -10,7 +10,7 @@ var blaring = new Audio();
 var audioArr = new Array('https://raw.githubusercontent.com/ilterates/badalarm/master/assets/_boat.mp3',
                          'https://raw.githubusercontent.com/ilterates/badalarm/master/assets/_morty.mp3',
                          'https://raw.githubusercontent.com/ilterates/badalarm/master/assets/_mkay.mp3',
-                         'https://raw.githubusercontent.com/ilterates/badalarm/master/assets/_sparrow.mp3');
+                         'https://raw.githubusercontent.com/ilterates/badalarm/master/assets/_jsparrow.mp3');
 var random = _.sample(audioArr);
 blaring.src = random;
 function badTime() {
