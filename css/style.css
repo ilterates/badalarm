@@ -110,6 +110,8 @@ body {
   text-decoration: none;
   color: #3C3A4E;
   border-radius: 5px;
+  border-width: 5px;
+  border-color: rgba(255,255,255,0.8);
   /*top: -10px;*/
   float: right;
 }

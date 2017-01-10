@@ -15,7 +15,7 @@ var random = _.sample(audioArr);
 blaring.src = random;
 function badTime() {
   var timeChecker = moment().format('hh:mm:ss a'); // November 15th 2016, 8:54:55 pm
-  console.log(timeChecker);
+  //console.log(timeChecker);
   $("#time").text( timeChecker );
    var t = setTimeout(badTime, 500);
   // var now = Date.now();
