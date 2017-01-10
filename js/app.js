@@ -18,11 +18,6 @@ function badTime() {
   //console.log(timeChecker);
   $("#time").text( timeChecker );
    var t = setTimeout(badTime, 500);
-  // var now = Date.now();
-  // var delay =  500;
-  // while ( Date.now() - delay > now ) {
-  //   badTime();
-  //}
 }
       // setting the alarm //
       // hour //
@@ -138,20 +133,6 @@ $("#minute-down-arrow, #minute-up-arrow, #alarm-minute" ).bind('mousewheel', fun
   }
   function stopSound() {
     blaring.pause();
-  }
-  function doubleDigit() {
-    // alarmHour = $("#alarm-hour").val();
-    // alarmMinute = $("#alarm-minute").val();
-    // if ( alarmHour < 10 ) {
-    //   alarmHour = "0" + alarmHour;
-    //   $("#alarm-hour").val(alarmHour);
-    //   console.log("added 0", alarmHour);
-    // } else { console.log("test"); }
-    // if ( alarmMinute < 10 ) {
-    //   alarmMinute = "0" + alarmMinute;
-    //   $("#alarm-minute").val(alarmMinute);
-    //   console.log("added 0", alarmMinute);
-    // } else { console.log("test"); }
   }
   $("#am").click(function (){
     alarmTimePeriod = "am";
