@@ -2,19 +2,19 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Bad Alarm ⏱ </title>
+    <title>👎⏱</title>
     <link rel="stylesheet" href="css/style.css" media="screen" title="no title">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
   </head>
-  <div class="what">
+  <!-- <div class="what">
     <p class="text">?</p>
-  </div>
+  </div> -->
   <body onload="badTime()">
     <h1 class="title">Bad Alarm</h1>
     <div class="time-class" id="time">
     </div>
     <div class="form-div">
-      <form class="set-alarm">
+      <div class="set-alarm">
         <div class="set-hour set">
           <input class="alarm-setter" id="alarm-hour" pattern="[0-9]" value="0" maxlength="2" readonly="true">
           <img src="./assets/arrow.svg" class="up-arrow" id="hour-up-arrow" />
@@ -30,7 +30,9 @@
           <input class="am-pm" id="am" value="AM" readonly="true">
           <input class="am-pm am-pm-disabled" id="pm" value="PM" readonly="true">
         </div>
-      </form>
+      </div>
+    </div>
+    <div class="button-container">
       <button class="set-button" id="set-button" name="name">SET</button>
     </div>
     <!-- jQuery -->

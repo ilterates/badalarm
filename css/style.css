@@ -16,22 +16,23 @@ body {
   font-size: 7em;
   font-weight: lighter;
   color: #00dfc3;
-
 }
 .set {
   display: inline-block;
+}
+.form-div {
+  display: flex;
+  justify-content: center;
 }
 /* to be fixed margin-left: 38%; to be gone*/
 .form-div .set-alarm {
   text-align: center;
   display: inline-block;
-  margin-left: 38%;
-  margin-top: 180px;
+  margin-top: 30px;
 
   /*margin-right: auto;*/
 }
 .set-alarm .alarm-setter {
-  display: flex;
   /*justify-content: flex-start;*/
   /*align-self: flex-start;*/
   height: 50px;
@@ -99,33 +100,62 @@ body {
 .am-pm-disabled {
   opacity: 0.1;
 }
+/**//**//**//**//**//**//**//**//**//**/
+/* Button */
+/**//**//**//**//**//**//**//**//**//**/
+.button-container {
+  display: flex;
+  justify-content: center;
+}
 .set-button {
   width: 200px;
   height: 50px;
   background-color: #00dfc3;
   border: none;
   font-size: 2em;
-  margin-right: 5%;
-  margin-top: 15%;
   text-decoration: none;
   color: #3C3A4E;
   border-radius: 5px;
   border-width: 5px;
   border-color: rgba(255,255,255,0.8);
-  /*top: -10px;*/
-  float: right;
+  margin-top: 5%;
 }
 
 /**//**//**//**//**//**//**//**//**//**/
-/* What section */
+/* What section - disabled */
 /**//**//**//**//**//**//**//**//**//**/
 
 .what {
+  display: flex;
+  flex-wrap: wrap;
+  border-style: dashed;
   color: #00dfc3;
-  width: 50px;
+  /*width: 50px;*/
   height: 50px;
-  float: right;
+  /*float: right;*/
   margin-top: -3%;
   text-align: center;
   font-size: 3em;
+}
+.what .text {
+  flex: 50
+}
+
+@media (max-width: 700px) {
+  .title {
+    margin-top: 20%;
+    font-size: 4.5em;
+  }
+  .time-class {
+    font-size: 4.5em;
+  }
+}
+@media (max-width: 500px) {
+  .title {
+    margin-top: 20%;
+    font-size: 2.5em;
+  }
+  .time-class {
+    font-size: 2.5em;
+  }
 }
