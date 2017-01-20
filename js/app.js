@@ -172,8 +172,12 @@ var timePeriod = moment().format('a');
   }
   var check = setTimeout(badAlarm, 500);
 }
+// Sound testing functions
+$("#test-sound").click(function(){
+  test();
+});
 function test(){
-  if ( testOn === true ) {
+  if ( testOn === false ) {
     testSound();
   } else {
     testSoundOff();
@@ -182,10 +186,12 @@ function test(){
 function testSound(){
   testOn = true;
   testAudio.play();
+  console.log("test sound is on");
 }
 function testSoundOff(){
-  testAudio.stop();
+  testAudio.pause();
   testOn = false;
+  console.log("test sound is off");
 }
 // function titleLoop(){
 //   function swap1(){
