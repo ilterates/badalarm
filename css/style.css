@@ -127,7 +127,7 @@ body {
   width: 150px;
   height: auto;
   float: right;
-  position: absolute;
+  position: fixed;
   bottom: -80px;
   right: 0px;
 }
