@@ -14,7 +14,7 @@ var audioArr = new Array('https://raw.githubusercontent.com/ilterates/badalarm/m
 var random = _.sample(audioArr);
 blaring.src = random;
 var testAudio = new Audio();
-testAudio.src = 'https://raw.githubusercontent.com/ilterates/badalarm/master/assets/_boat.mp3';
+testAudio.src = 'https://raw.githubusercontent.com/ilterates/badalarm/master/assets/_soundCheck.wav';
 function badTime() {
   var timeChecker = moment().format('hh:mm:ss a'); // November 15th 2016, 8:54:55 pm
   //console.log(timeChecker);
