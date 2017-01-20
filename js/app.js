@@ -2,7 +2,7 @@ console.log("Connected!");
 console.log(moment.unix());
 var hour, minute, second, alarmHour, alarmMinute, intHour, alarmIntHour, alarmIntMinute;
 var alarmTimePeriod = "am";
-var set = false;
+var set, testOn = false;
 var am = true;
 var hourVal = 0;
 var minuteVal = 0;
@@ -13,6 +13,8 @@ var audioArr = new Array('https://raw.githubusercontent.com/ilterates/badalarm/m
                          'https://raw.githubusercontent.com/ilterates/badalarm/master/assets/_jsparrow.mp3');
 var random = _.sample(audioArr);
 blaring.src = random;
+var testAudio = new Audio();
+testAudio.src = 'https://raw.githubusercontent.com/ilterates/badalarm/master/assets/_boat.mp3';
 function badTime() {
   var timeChecker = moment().format('hh:mm:ss a'); // November 15th 2016, 8:54:55 pm
   //console.log(timeChecker);
@@ -105,68 +107,98 @@ $("#minute-down-arrow, #minute-up-arrow, #alarm-minute" ).bind('mousewheel', fun
     }
   }
 });
-  $("#set-button").on('click',function(){
-    if ( set === false ) {
-      set = true;
-      badAlarm();
-      $("#set-button").html("CANCEL");
-    } else {
-      set = false;
-      stopSound();
-      $("#set-button").html("SET");
-    }
-  });
-  function playSound() {
-    if ( set === true ) {
-      blaring.play();
-      $("#time").effect("shake", 750);
-      var restart = setTimeout(playSound, 2000);
-    }
+$("#set-button").on('click',function(){
+  if ( set === false ) {
+    set = true;
+    badAlarm();
+    $("#set-button").html("CANCEL");
+  } else {
+    set = false;
+    stopSound();
+    $("#set-button").html("SET");
   }
-  function stopSound() {
-    blaring.pause();
+});
+function playSound() {
+  if ( set === true ) {
+    blaring.play();
+    $("#time").effect("shake", 750);
+    var restart = setTimeout(playSound, 2000);
   }
-  $("#am").click(function (){
-    alarmTimePeriod = "am";
-    console.log(alarmTimePeriod);
-    $("#pm, #am").toggleClass("am-pm-disabled");
-  });
-  $("#pm").click(function (){
-    alarmTimePeriod = "pm";
-    console.log(alarmTimePeriod);
-    $("#pm, #am").toggleClass("am-pm-disabled");
-  });
-  function timePeriodChecker() {
+}
+function stopSound() {
+  blaring.pause();
+}
+$("#am").click(function (){
+  alarmTimePeriod = "am";
+  console.log(alarmTimePeriod);
+  $("#pm, #am").toggleClass("am-pm-disabled");
+});
+$("#pm").click(function (){
+  alarmTimePeriod = "pm";
+  console.log(alarmTimePeriod);
+  $("#pm, #am").toggleClass("am-pm-disabled");
+});
+function timePeriodChecker() {
+  am = true;
+  console.log(am);
+  if ( timePeriod === "am" ) {
     am = true;
-    console.log(am);
-    if ( timePeriod === "am" ) {
-      am = true;
-    } else {
-      am = false;
-    }
-  }
-  function pmSwitch() {
+  } else {
     am = false;
-    console.log(am);
   }
-  function badAlarm() {
-  var hour = moment().format('hh');
-  var minute = moment().format("mm");
-  var timePeriod = moment().format('a');
-    alarmHour = $("#alarm-hour").val();
-    alarmMinute = $("#alarm-minute").val();
-    intHour = parseInt(hour);
-    alarmIntHour = parseInt(alarmHour);
-    intMinute = parseInt(minute);
-    alarmIntMinute = parseInt(alarmMinute);
-    if ( alarmIntHour === intHour &&
-         alarmIntMinute === intMinute &&
-         set === true &&
-         timePeriod === alarmTimePeriod
-        ) {
-      playSound();
-      $("#set-button").html("CANCEL");
-      console.log("alarm");
-    }
-    var check = setTimeout(badAlarm, 500);
+}
+function pmSwitch() {
+  am = false;
+  console.log(am);
+}
+function badAlarm() {
+var hour = moment().format('hh');
+var minute = moment().format("mm");
+var timePeriod = moment().format('a');
+  alarmHour = $("#alarm-hour").val();
+  alarmMinute = $("#alarm-minute").val();
+  intHour = parseInt(hour);
+  alarmIntHour = parseInt(alarmHour);
+  intMinute = parseInt(minute);
+  alarmIntMinute = parseInt(alarmMinute);
+  if ( alarmIntHour === intHour &&
+       alarmIntMinute === intMinute &&
+       set === true &&
+       timePeriod === alarmTimePeriod
+      ) {
+    playSound();
+    $("#set-button").html("CANCEL");
+    console.log("alarm");
   }
+  var check = setTimeout(badAlarm, 500);
+}
+function test(){
+  if ( testOn === true ) {
+    testSound();
+  } else {
+    testSoundOff();
+  }
+}
+function testSound(){
+  testOn = true;
+  testAudio.play();
+}
+function testSoundOff(){
+  testAudio.stop();
+  testOn = false;
+}
+// function titleLoop(){
+//   function swap1(){
+//     $(".tab-title").text("Bad").delay(1000);
+//     swap2();
+//   }
+//   function swap2(){
+//     $(".tab-title").text("Alarm").delay(1000);
+//     swap3();
+//   }
+//   function swap3(){
+//     $(".tab-title").text("👎⏱").delay(1000);
+//     swap1();
+//   }
+// }
+// titleLoop();
