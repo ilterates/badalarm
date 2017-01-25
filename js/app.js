@@ -134,14 +134,12 @@ function stopSound() {
 $("#am").click(function (){
   if ( set !== true ) {
     alarmTimePeriod = "am";
-    console.log(alarmTimePeriod);
     $("#pm, #am").toggleClass("am-pm-disabled");
   }
 });
 $("#pm").click(function (){
   if ( set !== true ) {
     alarmTimePeriod = "pm";
-    console.log(alarmTimePeriod);
     $("#pm, #am").toggleClass("am-pm-disabled");
   }
 });
