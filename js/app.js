@@ -17,9 +17,11 @@ blaring.src = random;
 var testAudio = new Audio();
 testAudio.src = 'https://raw.githubusercontent.com/ilterates/badalarm/master/assets/_soundCheck.wav';
 function badTime() {
+  // moment.js
   var timeChecker = moment().format('hh:mm:ss a'); // November 15th 2016, 8:54:55 pm
   //console.log(timeChecker);
   $("#time").text( timeChecker );
+  // drop this to once a second
    var t = setTimeout(badTime, 500);
 }
       // setting the alarm //
@@ -130,14 +132,18 @@ function stopSound() {
   blaring.pause();
 }
 $("#am").click(function (){
-  alarmTimePeriod = "am";
-  console.log(alarmTimePeriod);
-  $("#pm, #am").toggleClass("am-pm-disabled");
+  if ( set !== true ) {
+    alarmTimePeriod = "am";
+    console.log(alarmTimePeriod);
+    $("#pm, #am").toggleClass("am-pm-disabled");
+  }
 });
 $("#pm").click(function (){
-  alarmTimePeriod = "pm";
-  console.log(alarmTimePeriod);
-  $("#pm, #am").toggleClass("am-pm-disabled");
+  if ( set !== true ) {
+    alarmTimePeriod = "pm";
+    console.log(alarmTimePeriod);
+    $("#pm, #am").toggleClass("am-pm-disabled");
+  }
 });
 function timePeriodChecker() {
   am = true;
