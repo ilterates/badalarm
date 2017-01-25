@@ -124,7 +124,7 @@ $("#set-button").on('click',function(){
 function playSound() {
   if ( set === true ) {
     blaring.play();
-    $("#time").effect("shake", 750);
+    // $("#time").effect("shake", 750);
     var restart = setTimeout(playSound, 2000);
   }
 }
