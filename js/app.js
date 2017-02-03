@@ -61,7 +61,7 @@ $("#hour-down-arrow, #hour-up-arrow, #alarm-hour").bind('mousewheel', function(e
   if (e.originalEvent.wheelDelta / 120 < 0 && set === false) {
     hourVal --;
     $("#alarm-hour").val(hourVal);
-    if (hourVal < 0) {
+    if ( hourVal <= 0 ) {
       hourVal = 12;
       $("#alarm-hour").val(hourVal);
     }
