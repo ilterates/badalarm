@@ -27,10 +27,10 @@ function badTime() {
       // setting the alarm //
       // hour //
 $("#hour-up-arrow").click(function(){
-  if ( set === false ) {
+  if ( !set ) {
     hourVal ++;
     $("#alarm-hour").val(hourVal);
-    if (hourVal > 12) {
+    if ( hourVal > 12 ) {
       hourVal = 1;
       $("#alarm-hour").val(hourVal);
     }
@@ -38,7 +38,7 @@ $("#hour-up-arrow").click(function(){
 });
 // hour with mousewheel //
 $("#hour-up-arrow, #hour-down-arrow, #alarm-hour").bind('mousewheel', function(e){
-  if (e.originalEvent.wheelDelta / 120 > 0 && set === false) {
+  if ( e.originalEvent.wheelDelta / 120 > 0 && set === false ) {
     hourVal ++;
     $("#alarm-hour").val(hourVal);
     if (hourVal > 12) {
@@ -48,17 +48,17 @@ $("#hour-up-arrow, #hour-down-arrow, #alarm-hour").bind('mousewheel', function(e
   }
 });
 $("#hour-down-arrow").click(function(){
-  if ( set === false ) {
+  if ( !set ) {
     hourVal --;
     $("#alarm-hour").val(hourVal);
-    if (hourVal < 1) {
+    if ( hourVal < 1 ) {
       hourVal = 12;
       $("#alarm-hour").val(hourVal);
     }
   }
 });
 $("#hour-down-arrow, #hour-up-arrow, #alarm-hour").bind('mousewheel', function(e){
-  if (e.originalEvent.wheelDelta / 120 < 0 && set === false) {
+  if ( e.originalEvent.wheelDelta / 120 < 0 && set === false ) {
     hourVal --;
     $("#alarm-hour").val(hourVal);
     if ( hourVal <= 0 ) {
@@ -69,10 +69,10 @@ $("#hour-down-arrow, #hour-up-arrow, #alarm-hour").bind('mousewheel', function(e
 });
     // minute //
 $("#minute-up-arrow").click(function(){
-  if ( set === false ) {
+  if ( !set ) {
     minuteVal ++;
     $("#alarm-minute").val(minuteVal);
-    if (minuteVal > 59) {
+    if ( minuteVal > 59 ) {
       minuteVal = 0;
       $("#alarm-minute").val(minuteVal);
     }
@@ -80,10 +80,10 @@ $("#minute-up-arrow").click(function(){
 });
 
 $("#minute-down-arrow").click(function(){
-  if ( set === false ) {
+  if ( !set ) {
     minuteVal --;
     $("#alarm-minute").val(minuteVal);
-    if (minuteVal < 0) {
+    if ( minuteVal < 0 ) {
       minuteVal = 59;
       $("#alarm-minute").val(minuteVal);
     }
@@ -91,7 +91,7 @@ $("#minute-down-arrow").click(function(){
 });
 // minute with mousewheel
 $("#minute-up-arrow, #minute-down-arrow, #alarm-minute").bind('mousewheel', function(e){
-  if (e.originalEvent.wheelDelta / 120 > 0 && set === false) {
+  if ( e.originalEvent.wheelDelta / 120 > 0 && set === false ) {
     minuteVal ++;
     $("#alarm-minute").val(minuteVal);
     if (minuteVal > 59) {
@@ -101,17 +101,17 @@ $("#minute-up-arrow, #minute-down-arrow, #alarm-minute").bind('mousewheel', func
   }
 });
 $("#minute-down-arrow, #minute-up-arrow, #alarm-minute" ).bind('mousewheel', function(e){
-  if (e.originalEvent.wheelDelta / 0 < 120 && set === false) {
+  if ( e.originalEvent.wheelDelta / 0 < 120 && set === false ) {
     minuteVal --;
     $("#alarm-minute").val(minuteVal);
-    if (minuteVal < 0) {
+    if ( minuteVal < 0 ) {
       minuteVal = 59;
       $("#alarm-minute").val(minuteVal);
     }
   }
 });
 $("#set-button").on('click',function(){
-  if ( set === false ) {
+  if ( !set ) {
     set = true;
     badAlarm();
     $("#set-button").html("CANCEL");
@@ -122,7 +122,7 @@ $("#set-button").on('click',function(){
   }
 });
 function playSound() {
-  if ( set === true ) {
+  if ( set ) {
     blaring.play();
     // $("#time").effect("shake", 750);
     var restart = setTimeout(playSound, 2000);
@@ -132,13 +132,13 @@ function stopSound() {
   blaring.pause();
 }
 $("#am").click(function (){
-  if ( set !== true ) {
+  if ( !set ) {
     alarmTimePeriod = "am";
     $("#pm, #am").toggleClass("am-pm-disabled");
   }
 });
 $("#pm").click(function (){
-  if ( set !== true ) {
+  if ( !set ) {
     alarmTimePeriod = "pm";
     $("#pm, #am").toggleClass("am-pm-disabled");
   }
@@ -182,7 +182,7 @@ $("#test-sound").click(function(){
   test();
 });
 function test(){
-  if ( testOn === false ) {
+  if (!testOn) {
     testSound();
   } else {
     testSoundOff();
@@ -198,18 +198,3 @@ function testSoundOff(){
   testOn = false;
   console.log("test sound is off");
 }
-// function titleLoop(){
-//   function swap1(){
-//     $(".tab-title").text("Bad").delay(1000);
-//     swap2();
-//   }
-//   function swap2(){
-//     $(".tab-title").text("Alarm").delay(1000);
-//     swap3();
-//   }
-//   function swap3(){
-//     $(".tab-title").text("👎⏱").delay(1000);
-//     swap1();
-//   }
-// }
-// titleLoop();
