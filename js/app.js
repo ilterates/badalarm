@@ -58,7 +58,7 @@ $("#hour-down-arrow").click(function(){
   }
 });
 $("#hour-down-arrow, #hour-up-arrow, #alarm-hour").bind('mousewheel', function(e){
-  if ( e.originalEvent.wheelDelta / 120 < 0 && set === false ) {
+  if ( e.originalEvent.wheelDelta / 120 < 0 && !set ) {
     hourVal --;
     $("#alarm-hour").val(hourVal);
     if ( hourVal <= 0 ) {
@@ -91,7 +91,7 @@ $("#minute-down-arrow").click(function(){
 });
 // minute with mousewheel
 $("#minute-up-arrow, #minute-down-arrow, #alarm-minute").bind('mousewheel', function(e){
-  if ( e.originalEvent.wheelDelta / 120 > 0 && set === false ) {
+  if ( e.originalEvent.wheelDelta / 120 > 0 && !set ) {
     minuteVal ++;
     $("#alarm-minute").val(minuteVal);
     if (minuteVal > 59) {
@@ -101,7 +101,7 @@ $("#minute-up-arrow, #minute-down-arrow, #alarm-minute").bind('mousewheel', func
   }
 });
 $("#minute-down-arrow, #minute-up-arrow, #alarm-minute" ).bind('mousewheel', function(e){
-  if ( e.originalEvent.wheelDelta / 0 < 120 && set === false ) {
+  if ( e.originalEvent.wheelDelta / 0 < 120 && !set ) {
     minuteVal --;
     $("#alarm-minute").val(minuteVal);
     if ( minuteVal < 0 ) {
@@ -168,7 +168,7 @@ var timePeriod = moment().format('a');
   alarmIntMinute = parseInt(alarmMinute);
   if ( alarmIntHour === intHour &&
        alarmIntMinute === intMinute &&
-       set === true &&
+       set &&
        timePeriod === alarmTimePeriod
       ) {
     playSound();
